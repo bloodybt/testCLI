@@ -53,7 +53,7 @@ class CommandController {
 
         $view = new View();
         if (empty($error)) {
-            $output = $model::$param();         // execute command
+            $output = $model->$param();         // execute command
             $view->sendOutput($output, $text);  // send execution result
         } else {
             $view->sendError($error, $text);    // send error
